@@ -14,4 +14,3 @@
 
 # special files which must ignore whitespace
 *.patch      whitespace=-trailing-space
-z
