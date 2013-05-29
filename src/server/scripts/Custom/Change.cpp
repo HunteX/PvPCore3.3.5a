@@ -21,11 +21,11 @@ class npc_change : public CreatureScript
                 else
                 { 
 				    player->ADD_GOSSIP_ITEM( 0, "10 Mark -> Reset Instance"                                    , GOSSIP_SENDER_MAIN, 1);
-				    player->ADD_GOSSIP_ITEM( 0, "10 Mark -> 25 Arena Pointu"                                   , GOSSIP_SENDER_MAIN, 2);
-				    player->ADD_GOSSIP_ITEM( 0, "10 BOJ -> 1 Mark"                                             , GOSSIP_SENDER_MAIN, 3);
+				    player->ADD_GOSSIP_ITEM( 0, "10 Mark -> 25 Arena Points"                                   , GOSSIP_SENDER_MAIN, 2);
+				    player->ADD_GOSSIP_ITEM( 0, "10 Badge of Justice -> 1 Mark"                                             , GOSSIP_SENDER_MAIN, 3);
 				    player->ADD_GOSSIP_ITEM( 0, "2 Mark -> 1 EoT"                                              , GOSSIP_SENDER_MAIN, 4);
 				    player->ADD_GOSSIP_ITEM( 0, "4 Mark -> 5000 Honor"                                         , GOSSIP_SENDER_MAIN, 5);
-				    player->ADD_GOSSIP_ITEM( 0, "1 Mark -> 10 BoJ"                                             , GOSSIP_SENDER_MAIN, 6);
+				    player->ADD_GOSSIP_ITEM( 0, "1 Mark -> 10 Badge of Justice"                                             , GOSSIP_SENDER_MAIN, 6);
 				    player->ADD_GOSSIP_ITEM( 0, "1 Mark -> 10 Wood(GH MARK)"                                   , GOSSIP_SENDER_MAIN, 7);
 				    player->ADD_GOSSIP_ITEM( 0, "1 Mark -> 1 Metal(GH MARK)"                                   , GOSSIP_SENDER_MAIN, 7);
 				    player->ADD_GOSSIP_ITEM( 0, "100 Mark -> [MOUNT]Reins of the Raven Lord"                   , GOSSIP_SENDER_MAIN, 16);
