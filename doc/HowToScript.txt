@@ -1,9 +1,9 @@
 ** HOW TO SCRIPT IN C++ **
 
-=========================================================
+==========================================================
 WARNING: THIS DOCUMENTATION IS NOT ALWAYS UP TO DATE.
 FOR MORE UP-TO-DATE INFORMATION, CHECK THE TRINITY WIKI.
-=========================================================
+==========================================================
 
 1 - create a file myscript.cpp in the scripts/custom folder.
 2 - Find the appropriate examples script in the scripts/examples folder and copy its contents.
