@@ -1,16 +1,3 @@
-/*******************************************************************************************
-*              ______                   ______                   _____                     *
-*             / _____)                 |  ___ \                 / ___ \       _            *
-*            | /  ___  ____  ____ _   _| | _ | | ___ _   _ ____| |   | |_   _| |_          *
-*            | | (___)/ _  |/ ___) | | | || || |/ _ \ | | / _  ) |   | | | | |  _)         *
-*            | \____/( ( | | |   | |_| | || || | |_| \ V ( (/ /| |___| | |_| | |__         *
-*             \_____/ \_||_|_|    \__  |_||_||_|\___/ \_/ \____)\_____/ \____|\___)        *
-*                                (____/                                                    *
-*                               or any other files are protected. You cannot re-release    * 
-*                               anywhere unless you were given permission.                 *
-*                           (C) GaryMoveOut 2013. All rights reserved.                     *
-********************************************************************************************/
-
 #include "ScriptPCH.h"
 #include "Channel.h"
 
@@ -66,7 +53,7 @@ class System_Censure : public PlayerScript
         checks[7] ="wow-";
         checks[8] ="-wow";
         checks[9] =".pl";
-        // Polskie przekleñstwa (Polish curses)
+        // Polskie przekleï¿½stwa (Polish curses)
         checks[10] ="chuj";
         checks[11] ="huj";
         checks[12] ="kurw";
