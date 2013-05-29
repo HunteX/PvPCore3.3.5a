@@ -44,7 +44,7 @@ VALUES
 ('2797901','27979','0','0','100','3','4000','7000','7000','12000','11','50900','4','0','0','0','0','0','0','0','0','0','Forged Iron Trogg (Normal) - Cast Lightning Shock'),
 ('2797902','27979','0','0','100','5','4000','7000','7000','12000','11','59852','4','0','0','0','0','0','0','0','0','0','Forged Iron Trogg (Heroic) - Cast Lightning Shock');
 
--- ScriptNames für die Adds des Tribunaevents
+-- ScriptNames fï¿½r die Adds des Tribunaevents
 UPDATE `creature_template` SET `ScriptName`= 'mob_dark_rune_protector' WHERE `entry`= 27983;
 UPDATE `creature_template` SET `ScriptName`= 'mob_dark_rune_stormcaller' WHERE `entry`= 27984;
 UPDATE `creature_template` SET `ScriptName`= 'mob_iron_golem_gustodian' WHERE `entry`= 27985;
@@ -56,5 +56,5 @@ DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=13 AND `SourceEntry` IN
 INSERT INTO `conditions` VALUES ('13', '1', '51136', '0', '0', '32', '0', '144', '0', '0', '0', '0', '', null);
 INSERT INTO `conditions` VALUES ('13', '1', '51001', '0', '0', '32', '0', '144', '0', '0', '0', '0', '', null);
 
--- Richtige Factions für Sjonniradds
+-- Richtige Factions fï¿½r Sjonniradds
 UPDATE `creature_template` SET `faction_A`= 1965, `faction_H`= 1965 WHERE `entry` IN (27979, 27981, 27982, 28165, 31390, 31388, 31394, 31389);
