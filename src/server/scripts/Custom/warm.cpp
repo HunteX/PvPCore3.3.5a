@@ -5,7 +5,7 @@
 #include "ScriptMgr.h"
 
 //!Commands Info (Using .help <cmd>)
-#define cinfo_player  		"Give warn to player."
+#define cinfo_player			"Give warn to player."
 #define cinfo_list_all			"Show all available warnings"
 #define cinfo_list_name			"Show available warnings for player name."
 #define cinfo_remove_id			"Remove warn with specified ID."
@@ -335,6 +335,35 @@ public:
 		return true;
 	}
 
+	static bool PWarnRemoveName(ChatHandler* handler, const char* args)
+	{
+		if(!*args)
+			return false;
+
+		char* name = strtok((char*)args, " ");
+
+		if(!PlayerExists(handler, name))
+		{
+			sendCMDError(handler, "Player not found");
+            return false;
+		}
+
+		if(!WarnNameExists(handler, name))
+		{
+			sendCMDError(handler, "This player does not have any warnings");
+			handler->SetSentErrorMessage(true);
+			return false;
+		}
+
+		CharacterDatabase.PExecute("DELETE FROM `player_warnings` WHERE `reported`='%s'", name);
+
+		handler->PSendSysMessage("All %s's warnings removed", name);
+
+		return true;
+	}
+
+};
+ 
 void AddSC_custom_warnings()
 {
     new custom_warnings();
