@@ -124,6 +124,15 @@ class BattlegroundMgr
         static HolidayIds BGTypeToWeekendHolidayId(BattlegroundTypeId bgTypeId);
         static BattlegroundTypeId WeekendHolidayIdToBGType(HolidayIds holiday);
         static bool IsBGWeekend(BattlegroundTypeId bgTypeId);
+        
+    //SymbolixDEV
+     BattlegroundData* GetAllBattlegroundsWithTypeId(BattlegroundTypeId bgTypeId) {
+        BattlegroundDataContainer::iterator it = bgDataStore.find(bgTypeId);
+        if (it == bgDataStore.end())
+            return NULL;
+            
+            return &it->second;
+     }
 
         uint32 GetMaxRatingDifference() const;
         uint32 GetRatingDiscardTimer()  const;
