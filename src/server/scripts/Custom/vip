@@ -147,7 +147,8 @@ static bool HandleVipMallCommand(ChatHandler* handler, const char* args)
 		me->TeleportTo(0,	23.8378f,	-1588.85f,	195.419f,	4.54306f); // MapId, X, Y, Z, O
                 return true;
     }
-
+    
+};
 
 void AddSC_vipcommands()
 {
