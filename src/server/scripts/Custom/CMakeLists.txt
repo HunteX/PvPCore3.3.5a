@@ -22,6 +22,14 @@ set(scripts_STAT_SRCS
   Custom/arena_fast_start.cpp
   Custom/cs_fake.cpp
   Custom/ArenaSpectate.cpp
+  Custom/DuelCD.cpp
+  Custom/vip.cpp
+  Custom/Utility.cpp
+  Custom/Change.cpp
+  Custom/Prof.cpp
+  Custom/event.cpp
+  Custom/pvp.cpp
+  Custom/warm.cpp
 )
 
 message("  -> Prepared: Custom")
