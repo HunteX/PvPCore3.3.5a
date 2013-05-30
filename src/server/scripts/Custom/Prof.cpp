@@ -1,22 +1,16 @@
-//by SymbolixDEV https://github.com/SymbolixDEV
+//Fixed error by SymbolixDEV
+//Thanks Aco
 #pragma once
 #include "ScriptPCH.h"
 #include "Language.h"
 
-class skill_npc : public CreatureScript
+class proffesion_giver : public CreatureScript
+{
+	public: proffesion_giver() : CreatureScript("proffesion_giver") {}
 
+	struct skill_npcAI : public ScriptedAI
 	{
-public:
-
-skill_npc() : CreatureScript("skill_npc") {}
-
-struct skill_npcAI : public ScriptedAI
-	{
-		skill_npcAI(Creature *c) : ScriptedAI(c)
-		{
-		}
-
-		
+		skill_npcAI(Creature *c) : ScriptedAI(c) {}
 	};
 
 	CreatureAI* GetAI(Creature* _creature) const
@@ -35,12 +29,10 @@ struct skill_npcAI : public ScriptedAI
 		return sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL);
 	}
 
-
-void MainMenu(Player *pPlayer, Creature* _creature)
-{
-		pPlayer->ADD_GOSSIP_ITEM(9, "[Proffesions]->", GOSSIP_SENDER_MAIN, 196);
-       
-}
+	void MainMenu(Player *pPlayer, Creature* _creature)
+	{
+		pPlayer->ADD_GOSSIP_ITEM(9, "Professions", GOSSIP_SENDER_MAIN, 196);
+	}
 
 	bool PlayerHasItemOrSpell(const Player *plr, uint32 itemId, uint32 spellId) const
 	{
@@ -54,7 +46,7 @@ void MainMenu(Player *pPlayer, Creature* _creature)
         return true;
     }
 
-bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
+	bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 	{
 		uint32 skillCount = 0;
 
@@ -101,7 +93,7 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 
         if (!SkillInfo)
 		{
-			sLog->outError(LOG_FILTER_PLAYER,"Teleport NPC: received non-valid skill ID (LearnAllRecipesInProfession)");
+			sLog->outError(LOG_FILTER_PLAYER,"Proffesion Giver: received non-valid skill ID (LearnAllRecipesInProfession)");
             return false;
 		}
 
@@ -110,10 +102,10 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
         uint16 maxLevel = pPlayer->GetPureMaxSkillValue(SkillInfo->id);
         pPlayer->SetSkill(SkillInfo->id, pPlayer->GetSkillStep(SkillInfo->id), maxLevel, maxLevel);
         handler.PSendSysMessage(LANG_COMMAND_LEARN_ALL_RECIPES, skill_name);
-		
+
 		return true;
 	}
-	
+
 	void LearnSkillRecipesHelper(Player *player, uint32 skill_id)
 	{
 		uint32 classmask = player->getClassMask();
@@ -147,7 +139,7 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 
 	bool IsSecondarySkill(SkillType skill) const
 	{
-		return skill == SKILL_COOKING || skill == SKILL_FIRST_AID;
+		return skill == SKILL_COOKING || skill == SKILL_FIRST_AID || skill == SKILL_FISHING;
 	}
 
 	void CompleteLearnProfession(Player *pPlayer, Creature *pCreature, SkillType skill)
@@ -160,17 +152,16 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 				pCreature->MonsterWhisper("Internal error occured!", pPlayer->GetGUID());
 		}
 	}
-	
-     bool OnGossipSelect(Player* pPlayer, Creature* _creature, uint32 uiSender, uint32 uiAction)
-{ 
+
+	bool OnGossipSelect(Player* pPlayer, Creature* _creature, uint32 uiSender, uint32 uiAction)
+	{ 
         pPlayer->PlayerTalkClass->ClearMenus();
         
         if (uiSender == GOSSIP_SENDER_MAIN)
         {
-                
-		switch (uiAction)
-		{
-				case 196:
+			switch (uiAction)
+			{
+			case 196:
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Alchemy", GOSSIP_SENDER_MAIN, 1);
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Blacksmithing", GOSSIP_SENDER_MAIN, 2);
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Leatherworking", GOSSIP_SENDER_MAIN, 3);
@@ -181,7 +172,7 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Inscription", GOSSIP_SENDER_MAIN, 8);
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Cooking", GOSSIP_SENDER_MAIN, 9);
 				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "First Aid", GOSSIP_SENDER_MAIN, 10);
-
+				pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Fishing", GOSSIP_SENDER_MAIN, 11);
 				pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 				break;
 			case 1:
@@ -234,16 +225,19 @@ bool PlayerAlreadyHasTwoProfessions(const Player *pPlayer) const
 
 				pPlayer->CLOSE_GOSSIP_MENU();
 				break;
+			case 11:
+				CompleteLearnProfession(pPlayer, _creature, SKILL_FISHING);
+
+				pPlayer->CLOSE_GOSSIP_MENU();
+				break;
+			}
 		}
 
-        
+		return true;
 	}
-	 return true;
-	 }
-	 
 };
 
-void AddSC_skill_npc()
+void AddSC_proffesion_giver()
 {
-    new skill_npc();
+    new proffesion_giver();
 }
