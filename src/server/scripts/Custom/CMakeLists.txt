@@ -30,6 +30,12 @@ set(scripts_STAT_SRCS
   Custom/event.cpp
   Custom/pvp.cpp
   Custom/warm.cpp
+  Custom/Enchanter.cpp
+  Custom/Faction.cpp
+  Custom/class.cpp
+  Custom/event.cpp
+  Custom/farm.cpp
+  Custom/tp.cpp
 )
 
 message("  -> Prepared: Custom")
