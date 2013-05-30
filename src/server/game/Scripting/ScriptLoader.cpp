@@ -1327,7 +1327,7 @@ void AddSC_vipcommands();
 void AddSC_utility_commandscript();
 void AddSC_NPC_Transmogrify();
 void AddSC_PvPToken_NPC();
-void AddSC_skill_npc();
+void AddSC_proffesion_giver();
 void AddSC_npc_shop();
 void AddSC_npc_mmr_reset();
 void AddSC_npc_maniek();
@@ -1341,8 +1341,8 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-    AddSC_NoFarming();
-    AddSC_npc_changer();
+        AddSC_NoFarming();
+        AddSC_npc_changer();
 	AddSC_eventannouncer();
 	AddSC_npc_enchantment();
 	AddSC_fake_commandscript();
@@ -1356,7 +1356,7 @@ void AddCustomScripts()
 	AddSC_utility_commandscript();
 	AddSC_NPC_Transmogrify();
 	AddSC_PvPToken_NPC();
-	AddSC_skill_npc();
+	AddSC_proffesion_giver();
 	AddSC_npc_shop();
 	AddSC_npc_mmr_reset();
 	AddSC_npc_maniek();
