@@ -24,28 +24,6 @@ void AddSC_example_escort();
 void AddSC_example_gossip_codebox();
 void AddSC_example_misc();
 void AddSC_example_commandscript();
-//Hunter Pet Vendor
-void AddSC_npc_hunterpetvendor();
-//Transmogrification
-void AddSC_NPC_Transmogrify();
-//Chat Censure
-void AddSC_System_Censure();
-// Npc Top 10 Arena Teams
-void AddSC_npc_arena_setup();
-// [MOD] MultiKill
-void AddSC_Mod_Multikill(); // by Codels
-// Mr.Maniek
-void AddSC_npc_maniek();
-// NPC MMR Master
-void AddSC_npc_mmr_reset();
-// NPC Astranaar SHOP
-void AddSC_npc_shop();
-// Fast Arena Start
-void AddSC_fast_arena_start();
-// Fake Players
-void AddSC_fake_commandscript();
-// Arena Spectator
-void AddSC_arena_spectator_script();
 
 // spells
 void AddSC_deathknight_spell_scripts();
@@ -1334,34 +1312,57 @@ void AddBattlegroundScripts()
 
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
-
+void AddSC_NoFarming();
+void AddSC_npc_changer();
+void AddSC_eventannouncer();
+void AddSC_npc_enchantment();
+void AddSC_fake_commandscript();
+void AddSC_Top5_Killers();
+void AddSC_System_Censure();
+void AddSC_npc_change();
+void AddSC_arena_spectator_script();
+void AddSC_fast_arena_start();
+void AddSC_custom_warnings();
+void AddSC_vipcommands();
+void AddSC_utility_commandscript();
+void AddSC_NPC_Transmogrify();
+void AddSC_PvPToken_NPC();
+void AddSC_skill_npc();
+void AddSC_npc_shop();
+void AddSC_npc_mmr_reset();
+void AddSC_npc_maniek();
+void AddSC_npc_arena_setup();
+void AddSC_Mod_Multikill();
+void AddSC_npc_hunterpetvendor();
+void AddSC_tc_teleporter();
 #endif
 
 void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-    //Hunter Pet Vendor
-    AddSC_npc_hunterpetvendor();
-    //Transmogrification
-    AddSC_NPC_Transmogrify();
-    //Chat Censure
-    AddSC_System_Censure();
-    // Npc Top 10 Arena Teams
-    AddSC_npc_arena_setup();
-    // [MOD] MultiKill
-    AddSC_Mod_Multikill(); // by Codels
-    // Mr.Maniek
-    AddSC_npc_maniek();
-    // NPC MMR Master
-    AddSC_npc_mmr_reset();
-    // NPC Astranaar SHOP
-    AddSC_npc_shop();
-    // Fast Arena Start
-    AddSC_fast_arena_start();
-    // Fake Players
-    AddSC_fake_commandscript();
-    // Arena Spectator
-    AddSC_arena_spectator_script();
+    AddSC_NoFarming();
+    AddSC_npc_changer();
+	AddSC_eventannouncer();
+	AddSC_npc_enchantment();
+	AddSC_fake_commandscript();
+	AddSC_Top5_Killers();
+	AddSC_System_Censure();
+	AddSC_npc_change();
+	AddSC_arena_spectator_script();
+	AddSC_fast_arena_start();
+	AddSC_custom_warnings();
+	AddSC_vipcommands();
+	AddSC_utility_commandscript();
+	AddSC_NPC_Transmogrify();
+	AddSC_PvPToken_NPC();
+	AddSC_skill_npc();
+	AddSC_npc_shop();
+	AddSC_npc_mmr_reset();
+	AddSC_npc_maniek();
+	AddSC_npc_arena_setup();
+	AddSC_Mod_Multikill();
+	AddSC_npc_hunterpetvendor();
+	AddSC_tc_teleporter();
 #endif
 }
