@@ -390,9 +390,26 @@ void WorldSession::HandleMovementOpcodes(WorldPacket& recvData)
     {
         plrMover->UpdateFallInformationIfNeed(movementInfo, opcode);
 
-        if (movementInfo.pos.GetPositionZ() < -500.0f)
+        if (movementInfo.pos.GetPositionZ() < underMapValueZ)
         {
-            if (!(plrMover->GetBattleground() && plrMover->GetBattleground()->HandlePlayerUnderMap(_player)))
+           if (underMapValueZ != -500) // For Custom Arena Zone //thanks to Saqirmdev
+        {
+          // Hackfix for ArenaUnderZ -> Teleport WHY TRINITY BREAK IT!
+          if (plrMover->GetMapId() == 572) // Lordaeron Arena 
+                    plrMover->TeleportTo(572, 1286.14868f, 1667.32f, 41.0f, 1.6f); //
+          
+          if (plrMover->GetMapId() == 559) // Nagrand Arena 
+                     plrMover->TeleportTo(559, 4052.79868f, 2926.32f, 16.0f, 1.6f); 
+      
+          if (plrMover->GetMapId() == 562) // Blade Edge arena 6237.797363 261.146088 2 0.7
+                     plrMover->TeleportTo(562, 6237.79768f, 261.142f, 2.0f, 4.0f); 
+           
+        if (plrMover->GetMapId() == 617) // Dalaran Arena
+                     plrMover->TeleportTo(617, 1286.14868f, 1667.32f, 41.0f, 1.6f); 
+      
+        }
+            else if (!(plrMover->GetBattleground() && plrMover->GetBattleground()->HandlePlayerUnderMap(_player)))
+    	   
             {
                 // NOTE: this is actually called many times while falling
                 // even after the player has been teleported away
