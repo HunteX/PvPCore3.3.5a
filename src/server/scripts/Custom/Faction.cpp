@@ -34,9 +34,9 @@ class npc_changer : public CreatureScript
 			switch(uiAction)
 			{
 				case 0:
-					if(Player->HasItemCount(race_token, 1))
+					if(Player->HasItemCount(race_token, 0))
 					{
-						Player->DestroyItemCount(race_token, 1, true, false);
+						Player->DestroyItemCount(race_token, 0, true, false);
 						Player->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 						CharacterDatabase.PExecute("UPDATE characters SET at_login = at_login | '128' WHERE guid = %u", Player->GetGUID());
 						Player->GetSession()->SendNotification("You need to relog, to change your race!");
@@ -49,9 +49,9 @@ class npc_changer : public CreatureScript
 					}
 					break;
 				case 1:
-					if(Player->HasItemCount(faction_token, 1))
+					if(Player->HasItemCount(faction_token, 0))
 					{
-						Player->DestroyItemCount(faction_token, 1, true, false);
+						Player->DestroyItemCount(faction_token, 0, true, false);
 						Player->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 						CharacterDatabase.PExecute("UPDATE characters SET at_login = at_login | '64' WHERE guid = %u", Player->GetGUID());
 						Player->GetSession()->SendNotification("You need to relog, to change your faction!");

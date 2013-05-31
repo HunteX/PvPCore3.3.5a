@@ -117,8 +117,8 @@ public:
 
         //handler->SendSysMessage(_FULLVERSION);
         handler->PSendSysMessage("WarlordCore");
-        handler->PSendSysMessage("Rev: 28.05.2013");
-        handler->PSendSysMessage("Project leaders: Elflock & SymbolixDEVe");
+        handler->PSendSysMessage("Rev: 30.05.2013");
+        handler->PSendSysMessage("Project leaders: Elflock & SymbolixDEV");
         handler->PSendSysMessage("Devs: SymbolixDEV & Elflock");
         handler->PSendSysMessage(LANG_CONNECTED_PLAYERS, playersNum, maxPlayersNum);
         handler->PSendSysMessage(LANG_CONNECTED_USERS, activeClientsNum, maxActiveClientsNum, queuedClientsNum, maxQueuedClientsNum);

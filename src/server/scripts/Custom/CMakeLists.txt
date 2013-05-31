@@ -13,7 +13,6 @@ set(scripts_STAT_SRCS
   Custom/hunterpet_vendor.cpp
   Custom/Transmogrification.cpp
   Custom/Transmogrification.h
-  Custom/chat_censure.cpp
   Custom/npc_arena_team_top.cpp
   Custom/mod_MultiKill.cpp
   Custom/npc_maniek.cpp
@@ -22,14 +21,18 @@ set(scripts_STAT_SRCS
   Custom/arena_fast_start.cpp
   Custom/cs_fake.cpp
   Custom/ArenaSpectate.cpp
-  Custom/DuelCD.cpp
-  Custom/vip.cpp
   Custom/Utility.cpp
   Custom/Change.cpp
-  Custom/Prof.cpp
   Custom/event.cpp
   Custom/pvp.cpp
   Custom/warm.cpp
+  Custom/Enchanter.cpp
+  Custom/Faction.cpp
+  Custom/class.cpp
+  Custom/event.cpp
+  Custom/tp.cpp
+  Custom/Professions_NPC.cpp
+  Custom/DuelCD.cpp
 )
 
 message("  -> Prepared: Custom")

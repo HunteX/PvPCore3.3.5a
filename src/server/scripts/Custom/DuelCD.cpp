@@ -1,4 +1,3 @@
-//by SymbolixDEV https://github.com/SymbolixDEV
 #include "ScriptPCH.h"
  
 class Duel_Reset : public PlayerScript

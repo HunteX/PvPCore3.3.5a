@@ -53,37 +53,11 @@ class System_Censure : public PlayerScript
         checks[7] ="wow-";
         checks[8] ="-wow";
         checks[9] =".pl";
-        // Polskie przekle�stwa (Polish curses)
-        checks[10] ="chuj";
-        checks[11] ="huj";
-        checks[12] ="kurw";
-        checks[13] ="jeba";
-        checks[14] ="cipa";
-        checks[15] ="gej";
-        checks[16] ="cwel";
-        checks[17] ="pizd";
-        checks[18] ="pierdo";
-        checks[19] ="spierd";
-        checks[20] ="zjeb";
-        checks[21] ="wypierdalaj";
-        checks[22] ="kutas";
-        // English curses
-        checks[23] ="bitch";
-        checks[24] ="clit";
-        checks[25] ="cock";
-        checks[26] ="cum";
-        checks[27] ="cunt";
-        checks[28] ="dick";
-        checks[29] ="faggot";
-        checks[30] ="fuck";
-        checks[31] ="gay";
-        checks[32] ="lesbian";
-        checks[33] ="penis";
-        checks[34] ="prick";
-        checks[35] ="slut";
-        checks[36] ="twat";
-        checks[37] ="whore";
-
+		checks[10] =".bg";
+		checks[11] =".eu";
+		checks[12] =".biz";
+		checks[13] =".-ip";
+		checks[14] =".-zapto.org";
         for (int i = 0; i < cheksSize; ++i)
              if (lower.find(checks[i]) != std::string::npos)
              {
