@@ -1,7 +1,3 @@
-//by SymbolixDEV https://github.com/SymbolixDEV
-
-
-
 class PvPToken_NPC : public CreatureScript
 {
     public:
