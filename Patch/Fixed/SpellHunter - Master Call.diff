@@ -1,0 +1,16 @@
+//* Fixed by JunkyBulgaria
+diff --git a/src/server/scripts/Spells/spell_hunter.cpp b/src/server/scripts/Spells/spell_hunter.cpp
+index 9ab3da5..8287fb9 100644
+--- a/src/server/scripts/Spells/spell_hunter.cpp
++++ b/src/server/scripts/Spells/spell_hunter.cpp
+@@ -396,6 +396,10 @@ class spell_hun_masters_call : public SpellScriptLoader
+                     {
+                         target->CastSpell(ally, GetEffectValue(), castMask);
+                         target->CastSpell(ally, GetSpellInfo()->Effects[EFFECT_0].CalcValue(), castMask);
++                        target->RemoveMovementImpairingAuras(); // remove already applied root and snare from pet
++                        caster->RemoveMovementImpairingAuras(); // remove already applied root and snare from pet's owner
++                        caster->CastSpell(ally, GetEffectValue(), castMask);
++                        caster->CastSpell(ally, GetSpellInfo()->Effects[EFFECT_0].CalcValue(), castMask); // apply 4s root and snare immunity to pet's owner
+                     }
+                 }
+             }
